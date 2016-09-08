@@ -1,0 +1,44 @@
+$bg: #ddd;
+$fontname: 'Lato';
+$red: #9F3737;
+$blue: #284B66;
+$black: #231F1F;
+$grey: #ccc;
+
+@mixin bottom-3d() {
+	border-bottom: 5px solid rgba(0.1, 0.1, 0.1, 0.2);
+}
+
+@mixin flex-row() {
+	-webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    display: flex;
+}
+
+@mixin flex-to($percent) {
+	-webkit-flex: 1 1 $percent;
+	-ms-flex: 1 1 $percent;
+	flex: 1 1 $percent;
+}
+
+html {
+    -webkit-text-size-adjust: none
+}
+
+body {
+	background-color: $bg;
+	color: $black;
+	font-family: $fontname, '-apple-system', sans-serif;
+	padding: 20px 40px;
+	height: unset;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: unset !important;
+}
