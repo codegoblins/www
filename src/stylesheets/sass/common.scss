@@ -1,0 +1,100 @@
+@mixin bottom-3d() {
+	border-bottom: 5px solid rgba(0.1, 0.1, 0.1, 0.2);
+}
+
+@mixin flex-row() {
+	-webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    display: flex;
+}
+
+@mixin flex-column() {
+	-webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    display: flex;
+}
+
+@mixin flex-to($percent) {
+	-webkit-flex: 1 1 $percent;
+	-ms-flex: 1 1 $percent;
+	flex: 1 1 $percent;
+	display: block;
+}
+
+html {
+    -webkit-text-size-adjust: none
+}
+
+a {
+	text-decoration: none;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.pull-right {
+	float: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.flex-10 {
+	@include flex-to(10%);
+}
+
+.flex-20 {
+	@include flex-to(20%);
+}
+
+.flex-25 {
+	@include flex-to(25%);
+}
+
+.flex-33 {
+	@include flex-to(33%);
+}
+
+.flex-40 {
+	@include flex-to(40%);
+}
+
+.flex-50 {
+	@include flex-to(50%);
+}
+
+.flex-60 {
+	@include flex-to(60%);
+}
+
+.flex-66 {
+	@include flex-to(66%);
+}
+
+.flex-75 {
+	@include flex-to(75%);
+}
+
+.flex-80 {
+	@include flex-to(80%);
+}
+
+.flex-100 {
+	@include flex-to(100%);
+}
+
+.flex-row {
+	@include flex-row();
+}
+
+@media(max-width: 720px) {
+	.sm-flex-column {
+		@include flex-column();
+	}
+}

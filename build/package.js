@@ -7,6 +7,7 @@ import path from 'path';
 import del from 'del';
 import sass from 'gulp-sass';
 import es from 'event-stream';
+import streamSeries from 'stream-series';
 
 let jsSourceRoot = path.join(process.env.PWD, 'src/js');
 
@@ -14,7 +15,7 @@ let jsSourceRoot = path.join(process.env.PWD, 'src/js');
 gulp.task('package', ['inject', 'static', 'templates']);
 
 gulp.task('static', () => {
-	gulp.src('./src/static/*').pipe(gulp.dest('./dist/static'));
+	gulp.src('./src/static/**/*').pipe(gulp.dest('./dist/static'));
 });
 
 gulp.task('templates', () => {
@@ -63,16 +64,19 @@ export function buildMySass() {
 gulp.task('inject', ['clean-dist'], () => {
 	let target = gulp.src('./src/index.html');
 
-	let vendorStream = gulp.src(wiredep().js)
+	let vendorJsStream = gulp.src(wiredep().js || [])
 						   .pipe(concat('vendor.js'))
 						   .pipe(gulp.dest('./dist/js/vendor'));
+
+	let vendorCssStream = gulp.src(wiredep().css || [])
+							  .pipe(gulp.dest('./dist/css/vendor'));
 
 	let appJsStream = buildMyJs();
 
 	let cssStream = buildMySass();
 
 	return target
-		  .pipe(inject(es.merge(vendorStream, appJsStream, cssStream), {ignorePath: 'dist'}))
+		  .pipe(inject(es.merge(vendorJsStream, appJsStream, streamSeries(vendorCssStream, cssStream)), {ignorePath: 'dist'}))
 		  .pipe(gulp.dest('./dist'));
 
 });

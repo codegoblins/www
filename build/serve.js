@@ -25,6 +25,7 @@ function reloadPage(stream) {
 
 gulp.task('serve:dev', ['package'], () => {
 	_browserSync.init({
+		notify: false,
 		server: {
 			baseDir: 'dist'
 		},
