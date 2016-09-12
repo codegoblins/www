@@ -44,8 +44,7 @@
 			link: (scope, ele, attrs) => {
 				let scrollTimer = null;
 
-				angular.element($window).bind("scroll", () => {
-					console.log('Scrolling, resetting timer');
+				angular.element($window).bind('scroll', () => {
 					if (scrollTimer)
 						clearTimeout(scrollTimer);
 
@@ -53,7 +52,6 @@
 
 					scrollTimer = setTimeout(() => {
 						angular.element(ele).css('display', 'block');
-						console.log('scrolling stopped, reshowing footer');
 					}, 250);
 				});
 			}

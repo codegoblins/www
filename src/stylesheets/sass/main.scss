@@ -4,7 +4,7 @@ $red: #9F3737;
 $blue: #284B66;
 $black: #231F1F;
 $text: #5F646C;
-$grey: #ffffff;
+$grey: #ccc;
 
 @import 'common';
 @import 'fonts';
@@ -121,6 +121,7 @@ small {
 
 	.mid-link {
 		text-align: center;
+		margin-bottom: 40px;
 
 		.resume-link {
 			border: 2px solid $red;
@@ -148,6 +149,11 @@ small {
 		font-weight: 700;
 		font-size: larger;
 	}
+}
+
+.divider {
+	border-bottom: 1px solid $grey;
+	margin-bottom: 28px;
 }
 
 @media(max-width: 720px) {
