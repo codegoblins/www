@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jeff Sweeney</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="HandheldFriendly" content="true">
+
+	<link rel="icon" href="/static/img/favicon.ico">
+
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/fonts.css">
+	<link rel="stylesheet" href="/css/main.css">
+	<!-- endinject -->
+
+	<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
+</head>
+
+<body ng-app="CodeGoblins">
+	<header ui-view="header"></header>
+	<div ui-view="content"></div>
+	<footer ui-view="footer"></footer>
+</body>
+
+	<!-- inject:js -->
+	<script src="/js/vendor/vendor.js"></script>
+	<script src="/js/main.pack.js"></script>
+	<!-- endinject -->
+</html>
