@@ -178,6 +178,8 @@ footer {
         text-align: center;
         font-size: 40px;
         color: #4070AA; }
+      footer .footer-content .contact-icons a:last-of-type {
+        margin-right: 0; }
 
 small {
   font-size: smaller; }
@@ -211,7 +213,7 @@ small {
     margin-top: 12px;
     margin-bottom: 24px; }
     .intro .group p {
-      line-height: 24px; }
+      line-height: 18px; }
   .intro h3 {
     color: #4070AA;
     font-weight: 700;

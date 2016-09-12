@@ -24,7 +24,6 @@ $grey: #ccc;
 }
 
 body {
-	// background-color: $grey;
 	background: url("/static/img/pattern.png");
 
 	color: $text;
@@ -91,6 +90,9 @@ footer {
 				font-size: 40px;
 				color: $blue;
 			}
+			a:last-of-type {
+				margin-right: 0;
+			}
 		}
 
 		
@@ -140,7 +142,7 @@ small {
 		margin-bottom: 24px;
 
 		p {
-			line-height: 24px;
+			line-height: 18px;
 		}
 	}
 
