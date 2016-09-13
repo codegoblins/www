@@ -16,6 +16,8 @@ gulp.task('package', ['inject', 'static', 'templates']);
 
 gulp.task('static', () => {
 	gulp.src('./src/static/**/*').pipe(gulp.dest('./dist/static'));
+
+	gulp.src('./CNAME').pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('templates', () => {
@@ -44,8 +46,8 @@ export function buildMyJs() {
 	};
 
 	return gulp.src(path.join(jsSourceRoot, 'main.js'))
-					   .pipe(webpackStream(webpackOptions))
-					   .pipe(gulp.dest('./dist/js'));
+			   .pipe(webpackStream(webpackOptions))
+			   .pipe(gulp.dest('./dist/js'));
 }
 
 export function buildMySass() {
