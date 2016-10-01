@@ -214,6 +214,20 @@ small {
     margin-bottom: 24px; }
     .intro .group p {
       line-height: 18px; }
+    .intro .group .project {
+      margin: 16px 0; }
+      .intro .group .project strong {
+        display: block;
+        font-weight: bolder;
+        font-size: smaller; }
+    .intro .group em {
+      font-style: italic;
+      margin-top: 4px;
+      font-size: 10pt;
+      display: block; }
+    .intro .group strong.subheader {
+      font-size: 16px;
+      margin: 8px 0; }
   .intro h3 {
     color: #4070AA;
     font-weight: 700;
