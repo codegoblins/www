@@ -11,7 +11,6 @@ bower
 sass
 babel (for ES2015)
 browsersync
-d3 4.2.0
 AngularJS 1.5.8
 Angular UI
 ```
